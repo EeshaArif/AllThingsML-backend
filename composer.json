@@ -1,0 +1,14 @@
+{
+    "name": "allthingsml/api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "EeshaArif",
+            "email": "eeshaarif@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "vlucas/phpdotenv": "^5.2"
+    }
+}
