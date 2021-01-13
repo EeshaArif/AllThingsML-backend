@@ -1,5 +1,3 @@
 # AllThingsML-backend
-
-create `.env` file
-
-`php composer.phar install`
+### Quick Start
+create `.env` file and run `php composer.phar install` to install the dependencies
