@@ -14,7 +14,6 @@
 	
 	//Connect to MySql
 	$db_handle = mysqli_connect($server, $user_name, $password);
-	$_ENV['DB_LINK'] = $db_handle;
 	$db_found = mysqli_select_db($db_handle, $database);
 	if ($db_found) { /*print "<br/>Database Found: " . $database;*/ }
 	else { print "<br/>Database NOT Found"; }

@@ -1,9 +1,9 @@
-<?php include "../DbSettings.php"; ?>
-<?php
+<?php include_once "../config.php"; 
+
     function get_message_list(){
+        GLOBAL $db_handle;
         $SQL = "SELECT * FROM Message";
-        $LINK = $_ENV['DB_LINK'];
-        $result = mysqli_query($LINK,$SQL);
+        $result = mysqli_query($db_handle,$SQL);
         $message_list = array();
         while ( $db_field = mysqli_fetch_assoc($result) ) {
             $message_list[] = array(
