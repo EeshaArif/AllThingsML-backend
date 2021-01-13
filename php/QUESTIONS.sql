@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS QUESTIONS (
 	q_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	question TEXT,
 	asked_by VARCHAR(50),
-	created_at DATE
+	created_at DATETIME
 );
 insert into QUESTIONS (q_id, question, asked_by, created_at) values (1, 'Curabitur at ipsum ac tellus semper interdum.', 'Alonso Fountain', '2020-04-18 23:44:42');
 insert into QUESTIONS (q_id, question, asked_by, created_at) values (2, 'Phasellus id sapien in sapien iaculis congue.', 'Archibald Guite', '2020-02-02 05:39:20');

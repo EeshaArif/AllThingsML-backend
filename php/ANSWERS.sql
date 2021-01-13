@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS ANSWERS (
 	q_id INT,
 	answer TEXT,
 	answered_by VARCHAR(50),
-	created_at DATE,
+	created_at DATETIME,
     key `q_id` (`q_id`)
 );
 insert into ANSWERS (a_id, q_id, answer, answered_by, created_at) values (1, 1, 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', 'Shep Maywood', '2020-09-23 14:57:37');

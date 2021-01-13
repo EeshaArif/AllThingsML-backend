@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS MESSAGES (
 	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	text TEXT,
 	owner VARCHAR(50),
-	created_at DATE,
+	created_at DATETIME,
 	c_id INT,
     KEY `c_id` (`c_id`)
 );
