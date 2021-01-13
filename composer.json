@@ -10,5 +10,6 @@
     "require": {},
     "require-dev": {
         "vlucas/phpdotenv": "^5.2"
-    }
+    },
+    "description": ""
 }
