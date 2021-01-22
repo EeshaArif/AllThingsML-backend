@@ -9,135 +9,453 @@ CREATE TABLE IF NOT EXISTS ARTICLES (
 	thumbnail VARCHAR(50),
 	created_at DATETIME
 );
-insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (1, 'faucibus orci luctus et ultrices posuere cubilia curae mauris viverra', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.', 'http://dummyimage.com/100x100.png/cc0000/ffffff', 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (1, 'How Principal Component Analysis (PCA) works',
 
-Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+ 'PCA, is a dimensionality-reduction method that is often used to reduce the dimensionality of large data sets.',
 
-Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
+  '../src/assets/img/articles/pca.png',
 
-Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
+   'Whoever tried to build <b>machine learning models </b> with many features would already know the glims about the concept of principal component analysis, In short <b>PCA</b>. <br><br> 
 
-Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
+   The inclusion of more features in the implementation of machine learning algorithms models might lead to worsening performance issues. The increase in the number of features will not always improve classification accuracy.
 
-Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+When enough features are not present in the data, the model is likely to underfit, and when data contains too many features, it is expected to overfit or underfit. This phenomenon is known as the curse of dimensionality.
 
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 'Winnifred Wasiel', '2020-10-06 10:51:13');
-insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (2, 'quam fringilla rhoncus mauris enim leo rhoncus sed', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.', 'http://dummyimage.com/100x100.png/ff4444/ffffff', 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
+Therefore, we apply dimensionality reduction by selecting the optimal set of lower dimensionality features in order to improve classification accuracy. <br><br>
 
-Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+We know that as the number of features or dimensions grows in a dataset, the available data which we need to generalize grows exponentially and becomes sparse. 
 
-Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+So, in high dimensional data The objects appear to be dissimilar and sparse, preventing common data organization strategies from being efficient. <br><br>
 
-Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
+To accurately predict the outcome for a given input data sample, the supervised machine learning models are trained. 
 
-Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', 'Cointon Faughnan', '2020-11-19 16:23:48');
-insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (3, 'nam congue risus semper porta', 'Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', 'http://dummyimage.com/100x100.png/cc0000/ffffff', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
+When the model is under training. Some part of the data is used for the model training, and the rest is used to evaluate how the model performs on unseen data. 
 
-Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
+This evaluation step helps us gain an understanding of whether the model is generalized or not. 
 
-In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+You can consider any of the below articles for splitting the dataset into train and test.<br>
 
-Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+Building a decision tree by splitting the data into train and test datasets. <br>
 
-Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+Building a random forest algorithm in python. <br><br>
 
-Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+Model generalization can be defined as the ability of the model to predict the outcome for an unseen input data accurately. 
 
-Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', 'Titos Crutchley', '2020-03-30 00:17:16');
-insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (4, 'nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit', 'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.', 'http://dummyimage.com/100x100.png/cc0000/ffffff', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+It is mandatory that the unseen input data should come from the same distribution as the one used to train the model.
 
-Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+The accuracy of the generalized model’s prediction on the unseen data should be very close to its accuracy on the training data.
 
-Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
+The efficient way to build a generalized model is by capturing a variety of possible combinations of the values of predictor variables and their corresponding targets.
 
-Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+Model generalization can be defined as the ability of the model to predict the outcome for an unseen input data accurately. 
 
-Fusce consequat. Nulla nisl. Nunc nisl.
+It is mandatory that the unseen input data should come from the same distribution as the one used to train the model.
 
-Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
+The accuracy of the generalized model’s prediction on the unseen data should be very close to its accuracy on the training data.
 
-In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+The efficient way to build a generalized model is by capturing a variety of possible combinations of the values of predictor variables and their corresponding targets. <br><br>', 'Anber Arif', '2020-10-06 10:51:13');
 
-Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 'Benji Curran', '2020-03-22 08:55:56');
-insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (5, 'eu magna vulputate luctus', 'Phasellus sit amet erat. Nulla tempus.', 'http://dummyimage.com/100x100.png/ff4444/ffffff', 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
 
-Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
 
-Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (2, 'POPULAR FEATURE SELECTION METHODS IN MACHINE LEARNING',
 
-Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.', 'Calv Tweddell', '2020-10-15 02:42:05');
-insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (6, 'sollicitudin mi sit amet lobortis sapien', 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.', 'http://dummyimage.com/100x100.png/5fa2dd/ffffff', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+ 'Feature selection, also known as variable selection, is the process of selecting a subset of relevant features (variables, predictors) for use in model construction.',
 
-Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+  '../src/assets/img/articles/pca.png',
 
-Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+   'Feature selection is the key influence factor for building accurate <b>machine learning models</b>. 
 
-Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
+   Let’s say for any given dataset the machine learning model learns the mapping between the input features and the target variable. 
 
-Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+So, for a new dataset, where the target is unknown, the model can accurately predict the target variable. 
 
-Fusce consequat. Nulla nisl. Nunc nisl.
+In machine learning, many factors affect the performance of a model, and they include: . <br><br> 
 
-Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
+Algorithm Choice. <br>
 
-In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+The features used to train the model. <br>
 
-Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 'Irita Hardern', '2021-05-10 02:29:05');
-insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (7, 'odio in hac habitasse platea dictumst maecenas ut massa quis', 'Etiam justo. Etiam pretium iaculis justo.', 'http://dummyimage.com/100x100.png/5fa2dd/ffffff', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.
+Parameters used in the algorithm. <br>
 
-Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
+Quality of the dataset. <br><br>
 
-Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
+Occasionally in a dataset, the set of features in their raw form do not provide the optimal information to train and to perform the prediction.
 
-Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
+Therefore, it is beneficial to discard the conflicting and unnecessary features from our dataset by the process known as feature selection methods or feature selection techniques.
 
-In congue. Etiam justo. Etiam pretium iaculis justo.
 
-In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+We can think of the feature selection methods in terms of supervised and unsupervised methods.
 
-Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+The methods that attempt to discover the relationship between the input variables also called independent variables and the target variable, are termed as the supervised methods. 
 
-Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', 'Tait Nix', '2020-09-05 05:06:05');
-insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (8, 'dictumst etiam faucibus cursus urna ut tellus nulla', 'Suspendisse potenti. In eleifend quam a odio.', 'http://dummyimage.com/100x100.png/cc0000/ffffff', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+They intend to identify the relevant features for achieving the high accurate model while relying on the labeled data availability. <br>
 
-Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Examples of supervised learning algorithms are: <br>
 
-Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
+Linear Regression. <br>
+Logistic Regression. <br>
+Decision Trees. <br>
+Neural Networks. <br> <br>
 
-Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+<b> Wrapper Feature Selection Methods </b><br><br>
+The wrapper methods create several models which are having different subsets of input feature variables. 
 
-Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
+Later the selected features which result in the best performing model in accordance with the performance metric.
 
-Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+The wrapper methods are unconcerned with the variable types, though they can be computationally expensive.
 
-Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', 'Shay Tschursch', '2020-08-21 11:33:59');
-insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (9, 'justo pellentesque viverra pede ac diam cras pellentesque volutpat', 'Fusce consequat. Nulla nisl. Nunc nisl.', 'http://dummyimage.com/100x100.png/ff4444/ffffff', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
+A well-known example of a wrapper feature selection method is Recursive Feature Elimination (RFE). 
 
-In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+RFE performs the evaluation of multiple models using procedures that add or remove predictor variables to find the optimal combination that maximizes the model’s performance. <br><br>
 
-Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
 
-Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+The accuracy of the generalized model’s prediction on the unseen data should be very close to its accuracy on the training data.
 
-Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+The efficient way to build a generalized model is by capturing a variety of possible combinations of the values of predictor variables and their corresponding targets. <br><br>',
+ 'Anber Arif', '2020-10-06 10:51:13');
 
-Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
 
-Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
 
-Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
 
-Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
 
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 'Corene Doers', '2020-07-09 04:49:00');
-insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (10, 'vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum', 'Nulla suscipit ligula in lacus.', 'http://dummyimage.com/100x100.png/cc0000/ffffff', 'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
 
-Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
 
-Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
 
-In congue. Etiam justo. Etiam pretium iaculis justo.
 
-In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
 
-Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 'Orville Camm', '2020-07-10 05:47:30');
+insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (3, 'CROSS VALIDATION IN MACHINE LEARNING',
+
+ 'Cross-validation is a statistical method used to estimate the skill of machine learning models.',
+
+  '../src/assets/img/articles/pca.png',
+
+   'It is mostly used while building machine learning models. It compares and selects a model for a given predictive modeling problem, assesses the models’ predictive performance. 
+
+Later judges how they perform outside to a new data set, also known as test data. 
+
+The motivation to use cross validation techniques is that we are holding it to a training dataset when we fit a model.
+
+In this tutorial, along with cross validation we will also have a soft focus on the k-fold cross-validation procedure for evaluating the performance of the machine learning models.
+
+Toward the end of this instructional exercise, you will become more acquainted with the below topics:  <br><br> 
+
+Various types of cross-validation among which k-fold cross-validation is the most commonly used. <br>
+
+The features used to train the model. <br>
+
+K-fold cross-validation is a resampling procedure that estimates the skill of the machine learning model on new data. <br>
+
+Some common strategies that we can use to select the value of k for our dataset <br>
+
+Common variations in cross-validation such as stratified and repeated that are available in scikit-learn. <br><br>
+
+
+
+Whenever a statistical model or a machine learning algorithm captures the data’s noise, underfitting comes into play. 
+
+Intuitively, overfitting occurs when the machine learning algorithm or the model fits the data too well. Whenever overfitting occurs, the model gives a good performance and accuracy on the training data set but a low accuracy on new unseen data sets.
+
+Contrary to that, whenever a statistical model or a machine learning algorithm cannot capture the data’s underlying trends, under-fitting comes into play.
+
+Intuitively, under-fitting occurs when the the model does not fit the information well enough. It can be said that under-fitting is a consequence of a straightforward model. 
+
+The term “simple” means the underlying missing data of the model is not adequately handled. The irrelevant features that do not contribute much to the predictor variable are not removed. <br><br>
+
+
+<b> How can we prevent Model Overfitting </b><br><br>
+
+In machine learning, a significant challenge with overfitting is that we are unaware of how our model will perform on the new data (test data) until we test it ourselves.
+
+Generally we split our initial dataset into two subsets, i-e, training, and test subsets, to address this issue.
+The wrapper methods create several models which are having different subsets of input feature variables. 
+
+If we use a smart way to use the available initial dataset to multiple test datasets, we can overcome the issue of overfitting. As now our model learns on various train datasets.
+
+This smart is nothing but cross validation. This makes more sense, when we explain how we can create multiple train datasets in the upcoming sections of this article.
+
+Later the selected features which result in the best performing model in accordance with the performance metric.
+
+The wrapper methods are unconcerned with the variable types, though they can be computationally expensive.
+
+A well-known example of a wrapper feature selection method is Recursive Feature Elimination (RFE). 
+
+RFE performs the evaluation of multiple models using procedures that add or remove predictor variables to find the optimal combination that maximizes the model’s performance. <br><br>
+
+
+The accuracy of the generalized model’s prediction on the unseen data should be very close to its accuracy on the training data.
+
+The efficient way to build a generalized model is by capturing a variety of possible combinations of the values of predictor variables and their corresponding targets. <br><br>',
+ 'Anber Arif', '2020-10-06 10:51:13');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (4, 'FIVE MOST POPULAR UNSUPERVISED LEARNING ALGORITHMS',
+
+ 'Today we are going to learn about the popular unsupervised learning algorithms in machine learning.',
+
+  '../src/assets/img/articles/pca.png',
+
+   '<b>Let’s start the article by discussing unsupervised learning. </b><br><br>
+
+Unsupervised learning is a machine learning approach in which models do not have any supervisor to guide them. Models themselves find the hidden patterns and insights from the provided data. 
+
+It mainly handles the unlabelled data. Somebody can compare it to learning, which occurs when a student solves problems without a teacher’s supervision. 
+
+We cannot apply unsupervised learning directly to a regression or classification problem. Because like supervised learning, we don’t have the input data with the corresponding output label. 
+
+Unsupervised learning aims to discover the dataset’s underlying pattern, assemble that data according to similarities, and express that dataset in a precise format.
+
+Unsupervised Learning Algorithms allow users to perform more advanced processing jobs compared to supervised learning.
+
+However, unsupervised learning can be more irregular compared with other methods.<br><br>
+
+
+<b>Why use an Unsupervised Learning algorithm?</b> <br><br> 
+
+It is similar to how a  human learns. It involves thinking by experiences, which moves it closer to real AI. <br>
+
+It works on unlabeled data, which makes unsupervised learning further critical as real-world data is mostly unlabelled. <br>
+
+It helps look for useful insights from the data. <br>
+
+Common variations in cross-validation such as stratified and repeated that are available in scikit-learn. <br><br>
+
+
+
+K-Means Clustering is an Unsupervised Learning algorithm. It arranges the unlabeled dataset into several clusters. 
+
+Here K denotes the number of pre-defined groups. K can hold any random value, as if K=3, there will be three clusters, and for K=4, there will be four clusters. 
+
+It is a repetitive algorithm that splits the given unlabeled dataset into K clusters. 
+
+Each dataset belongs to only one group that has related properties. It enables us to collect the data into several groups. 
+
+It is a handy method to identify the categories of groups in the given dataset without training.<br><br>
+
+
+<b> Hierarchical clustering </b><br><br>
+
+Hierarchical clustering, also known as Hierarchical cluster analysis. It is an unsupervised clustering algorithm. It includes building clusters that have a preliminary order from top to bottom.
+
+For example, All files and folders on the hard disk are in a hierarchy.
+
+The algorithm clubs related objects into groups named clusters. Finally, we get a set of clusters or groups. Here each cluster is different from the other cluster. 
+
+Also, the data points in each cluster are broadly related to each other.
+
+In an agglomerative hierarchical algorithm, each data point is considered a single cluster. 
+
+Then these clusters successively unite or agglomerate (bottom-up approach) the clusters’ sets. The hierarchy of the clusters is shown using a dendrogram.
+
+RFE performs the evaluation of multiple models using procedures that add or remove predictor variables to find the optimal combination that maximizes the model’s performance. <br><br>
+
+
+The accuracy of the generalized model’s prediction on the unseen data should be very close to its accuracy on the training data.
+
+The efficient way to build a generalized model is by capturing a variety of possible combinations of the values of predictor variables and their corresponding targets. <br><br>',
+ 'Saumya Awasthi', '2020-10-06 10:51:13');
+
+
+
+
+
+
+
+
+
+
+
+
+
+insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (5, 'How Ridge Regression Works',
+
+ 'Ridge regression is the regularized form of linear regression.',
+
+  '../src/assets/img/articles/pca.png',
+
+   'Before we learn about ridge regression, we should know about how linear regression works. Don’t forget, These pools of regression algorithms fall under the supervised learning algorithms category.
+
+Any modeling task that involves predicting a numerical value given a set of input features termed as regression.  In other words, regression tries to estimate the expected target value when we provide the known input features.
+
+Linear regression is assumed to be the standard algorithm for identifying the linear relationship between the target variable and the input features.
+
+In the above image, the green dots are the actual values, and the red line is the regression line, fitted for the actual data. To populate the equation, we use the line equation. <br><br>
+
+<b> Y = mX + C </b> <br><br>
+
+In mathematical terms: <br><br>
+
+<b>
+
+Y is the predicted value. <br>
+X is feature value. <br>
+m is the coefficients or weights. <br>
+C is the bias value. </b> <br> <br>
+
+
+
+To create the line (red) using the actual value, the regression model will iterate and recalculate the m (coefficient) and c (bias) values while trying to reduce the loss values with the proper loss function. 
+
+ In an extension to the linear regression that encourages the models which use small coefficient values, penalties added to the loss function during the training period. 
+
+These extensions were termed as the penalized linear regression or regularized linear regression.
+
+So, ridge regression is a famous regularized linear regression which makes use of the L2 penalty. This penalty shrinks the coefficients of those input variables which have not contributed less in the prediction task.
+
+With this understanding,  let’s learn about ridge regression.
+
+  <br><br> 
+<b> How Ridge Regression Works.</b> <br>
+
+
+In linear regression, a linear relationship exists between the input features and the target variable. The association is a line in the case of a single input variable. 
+
+Still, with the higher dimensions, the relationship can be assumed to be a hyperplane which connects the input features to the target variable. The coefficients can be found by the optimization method to minimize the error between the predicted output i-e; that and the expected output i-e; y.
+
+Linear regression may encounter problems in which the models stability. In which the loss function is modified and includes additional costs for a model with relatively large coefficients.
+
+The linear regression models having the revised version of the loss functions referred to as "Penalized or Regularized Linear Regression."<br><br>
+
+
+
+Whenever a statistical model or a machine learning algorithm captures the data’s noise, underfitting comes into play. 
+
+Intuitively, overfitting occurs when the machine learning algorithm or the model fits the data too well. Whenever overfitting occurs, the model gives a good performance and accuracy on the training data set but a low accuracy on new unseen data sets.
+
+Contrary to that, whenever a statistical model or a machine learning algorithm cannot capture the data’s underlying trends, under-fitting comes into play.
+
+Intuitively, under-fitting occurs when the the model does not fit the information well enough. It can be said that under-fitting is a consequence of a straightforward model. 
+
+The term “simple” means the underlying missing data of the model is not adequately handled. The irrelevant features that do not contribute much to the predictor variable are not removed. <br><br>
+
+
+<b> How can we prevent Model Overfitting </b><br><br>
+
+In machine learning, a significant challenge with overfitting is that we are unaware of how our model will perform on the new data (test data) until we test it ourselves.
+
+Generally we split our initial dataset into two subsets, i-e, training, and test subsets, to address this issue.
+The wrapper methods create several models which are having different subsets of input feature variables. 
+
+If we use a smart way to use the available initial dataset to multiple test datasets, we can overcome the issue of overfitting. As now our model learns on various train datasets.
+
+This smart is nothing but cross validation. This makes more sense, when we explain how we can create multiple train datasets in the upcoming sections of this article.
+
+Later the selected features which result in the best performing model in accordance with the performance metric.
+
+The wrapper methods are unconcerned with the variable types, though they can be computationally expensive.
+
+A well-known example of a wrapper feature selection method is Recursive Feature Elimination (RFE). 
+
+RFE performs the evaluation of multiple models using procedures that add or remove predictor variables to find the optimal combination that maximizes the model’s performance. <br><br>
+
+
+The accuracy of the generalized model’s prediction on the unseen data should be very close to its accuracy on the training data.
+
+The efficient way to build a generalized model is by capturing a variety of possible combinations of the values of predictor variables and their corresponding targets. <br><br>',
+ 'Anber Arif', '2020-10-06 10:51:13');
+
+
+
+
+
+
+
+
+
+
+
+
+insert into ARTICLES (id, heading, description, thumbnail, body, author, created_at) values (6, 'FIVE KEY ASSUMPTIONS OF LINEAR REGRESSION ALGORITHM',
+
+ 'Nearly 80% of the people build linear regression models without checking the basic assumptions of linear regression.',
+
+  '../src/assets/img/articles/pca.png',
+
+   'Just hold for a second and think. How many times have you built linear regression models without checking the linear regression assumptions?
+
+If you are not aware about the linear regression algorithm. It is a famous supervised machine learning algorithm that represents the linear relationship between a dependent variable and independent variables.
+
+It is easy to understand and implement. However, just writing a few lines of code won’t work as expected.
+
+Because before implementing the linear regression, we have to take care of certain assumptions made by linear regression.<br><br>
+
+It is important to understand these assumptions to improve the regression model’s performance. 
+
+So In this article, we are going to discuss these assumptions in-depth and ways to fix them if violated. 
+
+After gaining proper knowledge of linear regression assumptions, you can bring excessive improvement in regression models. <br><br>
+
+
+
+
+It is important to check this assumption because if you fit a linear model to a non-linear one, the regression algorithm would fail to capture the trend. 
+
+Hence, it will result in an inefficient model. Also, this will lead to erroneous predictions on the unseen data sets.
+
+Now comes the question
+
+What to do if the features and target relationship is not linear?
+Lets learn this.
+
+What to do if linear relationship assumption isn’t met
+Let us discuss the options you can go with. 
+
+You can apply nonlinear transformations to the independent and dependent variables.
+You can add another feature to the model.
+For example, if the plot of x’ vs. y’ has a parabolic shape, then it might be possible to add x2 as an additional feature in the model.<br><br>
+
+<b> Normal Distribution of Residuals </b><br><br>
+
+The second assumption of linear regression is all the residuals or error terms should be normally distributed. If residuals are non-normally distributed, the estimation may become too wide or narrow. 
+
+If there is non-normal distribution in residuals. You can conclude that there are some unusual data points that we have to observe closely to make a good model. 
+
+Here, the black line is showing the normal (standard) distribution, and the blue line is showing the current distribution. 
+
+We can see that there is a slight shift in the normal and current distribution. We can use the non-linear transformation of the given features if the residuals are not normally distributed.
+
+Q-Q Plot
+Which stands for “quantile-quantile” plot, can also be used to check if the residuals of a model follow a normal distribution or not. 
+
+If the residuals are normally distributed, then the plot will show a straight line. However, the deviation in the straight line shows the absence of normality. 
+
+Normality can be checked by doing statistical tests, too, like - the Kolmogorov-Smirnov test, Jarque-Barre, or D’Agostino-Pearson. <br><br>
+
+
+<b> Multicollinearity </b><br><br>
+
+The next assumption of linear regression is that there should be less or no multicollinearity in the given dataset. 
+
+This situation occurs when the features or independent variables of a given dataset are highly correlated to each other. 
+
+In a model having correlated variables, it becomes difficult to determine which variable is contributing to predict the target variable. Another thing is, the standard errors tend to increase due to the presence of correlated variables. 
+
+Also, when independent variables are highly correlated, the predicted regression coefficient of a correlated variable depends on other variables that are available in the model. 
+
+If you drop one correlated variable from the model, its predicted regression coefficients will change.  It can lead to wrong conclusions and poor performance of our model. 
+ <br><br>
+
+
+
+
+The accuracy of the generalized model’s prediction on the unseen data should be very close to its accuracy on the training data.
+
+The efficient way to build a generalized model is by capturing a variety of possible combinations of the values of predictor variables and their corresponding targets. <br><br>',
+ 'Saumya Awasthi', '2020-10-06 10:51:13');
+
+
