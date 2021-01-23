@@ -18,6 +18,7 @@ $server = $_SERVER['SERVER'];
 
 //Connect to MySql
 $db_handle = mysqli_connect($server, $user_name, $password);
+mysqli_set_charset($db_handle, 'utf8');
 $db_found = mysqli_select_db($db_handle, $database);
 if ($db_found) { /*print "<br/>Database Found: " . $database;*/
 } else {

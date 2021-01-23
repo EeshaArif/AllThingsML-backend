@@ -7,7 +7,7 @@
 		switch ($_GET["action"])
 		{
         case "get_articles_list":
-            $value = get_articles_list();
+			$value = get_articles_list();
             break;
 		
 		case "get_article":
@@ -15,8 +15,9 @@
 				$value = get_article_of_id($_GET['id']);
 			}
 			break;
-			
+
 		}
+		
 		exit(json_encode(array("articles_list" => $value)));
 	}
 	
