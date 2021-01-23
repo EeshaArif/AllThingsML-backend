@@ -2,7 +2,7 @@
 
     function get_competitions_list(){
         GLOBAL $db_handle;
-        $SQL = "SELECT * FROM competitions";
+        $SQL = "SELECT * FROM COMPETITIONS";
         $result = mysqli_query($db_handle,$SQL);
         $competitions_list = array();
         while ( $db_field = mysqli_fetch_assoc($result) ) {

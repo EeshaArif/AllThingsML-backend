@@ -5,7 +5,7 @@ $value = "An error has occurred (is this action included in the possible actions
 
 if (isset($_GET["action"]) && in_array($_GET["action"], $possible_actions)) {
     switch ($_GET["action"]) {
-        
+
         case "get_messages_list":
             if (isset($_GET['community_id'])) {
                 $c_id = $_GET['community_id'];
@@ -17,6 +17,20 @@ if (isset($_GET["action"]) && in_array($_GET["action"], $possible_actions)) {
             exit(json_encode(array("messages_list" => $value)));
             break;
     }
+} else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $file = file_get_contents("php://input", true);
+    $data = (array) json_decode($file);
+    $message = new \stdClass();
+    if (isset($data['text']) && isset($data['owner']) && isset($data['c_id']) && isset($data['created_at'])) {
+        $message->text = $data['text'];
+        $message->owner = $data['owner'];
+        $message->c_id = $data['c_id'];
+        $message->created_at = $data['created_at'];
+        $value = post_message($message);
+    } else {
+        $value = "could not post message, all values not set";
+    }
+    exit(json_encode(array("messages_list" => $value)));
 }
 
 exit(json_encode($value));

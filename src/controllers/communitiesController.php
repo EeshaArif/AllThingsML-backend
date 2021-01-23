@@ -3,7 +3,7 @@
 function get_communities_list()
 {
     global $db_handle;
-    $SQL = "SELECT * FROM communities";
+    $SQL = "SELECT * FROM COMMUNITIES";
     $result = mysqli_query($db_handle, $SQL);
     $communities_list = array();
     while ($db_field = mysqli_fetch_assoc($result)) {
@@ -19,7 +19,7 @@ function get_communities_list()
 function get_community_of_topic($topic)
 {
     global $db_handle;
-    $SQL = "SELECT * FROM communities WHERE topic='$topic'";
+    $SQL = "SELECT * FROM COMMUNITIES WHERE topic='$topic'";
     $result = mysqli_query($db_handle, $SQL);
     $community_list = array();
     while ($db_field = mysqli_fetch_assoc($result)) {

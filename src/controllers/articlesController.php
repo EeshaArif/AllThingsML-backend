@@ -20,7 +20,7 @@
     }
     function get_article_of_id($id){
         GLOBAL $db_handle;
-        $SQL = "SELECT * FROM articles WHERE id=$id";
+        $SQL = "SELECT * FROM ARTICLES WHERE id=$id";
         $result = mysqli_query($db_handle,$SQL);
         $articles_list = array();
         while ( $db_field = mysqli_fetch_assoc($result) ) {

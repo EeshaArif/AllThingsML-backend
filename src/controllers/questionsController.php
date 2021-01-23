@@ -3,7 +3,7 @@
 function get_questions_list()
 {
     global $db_handle;
-    $SQL = "SELECT * FROM questions";
+    $SQL = "SELECT * FROM QUESTIONS";
     $result = mysqli_query($db_handle, $SQL);
     $questions_list = array();
     while ($db_field = mysqli_fetch_assoc($result)) {

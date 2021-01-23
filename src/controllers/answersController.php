@@ -3,7 +3,7 @@
 function get_answers_list()
 {
     global $db_handle;
-    $SQL = "SELECT * FROM answers";
+    $SQL = "SELECT * FROM ANSWERS";
     $result = mysqli_query($db_handle, $SQL);
     $answers_list = array();
     while ($db_field = mysqli_fetch_assoc($result)) {
@@ -22,7 +22,7 @@ function get_answers_list()
 function get_answers_of_question($id)
 {
     global $db_handle;
-    $SQL = "SELECT * FROM answers WHERE q_id = $id";
+    $SQL = "SELECT * FROM ANSWERS WHERE q_id = $id";
     $result = mysqli_query($db_handle, $SQL);
     $answers_list = array();
     while ($db_field = mysqli_fetch_assoc($result)) {

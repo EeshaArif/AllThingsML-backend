@@ -3,7 +3,7 @@
 function get_courses_list()
 {
     global $db_handle;
-    $SQL = "SELECT * FROM courses";
+    $SQL = "SELECT * FROM COURSES";
     $result = mysqli_query($db_handle, $SQL);
     $courses_list = array();
     while ($db_field = mysqli_fetch_assoc($result)) {
