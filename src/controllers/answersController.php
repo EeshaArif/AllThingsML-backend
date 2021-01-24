@@ -36,3 +36,27 @@ function get_answers_of_question($id)
     }
     return $answers_list;
 }
+
+function post_answer($answer_)
+{
+    global $db_handle;
+    $answer =  $answer_->answer;
+    $answered_by = $answer_->answered_by;
+    $created_at = $answer_->created_at;
+    $q_id = $answer_->q_id;
+    $SQL = "INSERT INTO ANSWERS (answer, answered_by, created_at, q_id) VALUES ('$answer','$answered_by','$created_at',$q_id)";
+    $result = mysqli_query($db_handle, $SQL);
+    $answers_list = array();
+    if ($result == false) {
+        echo "could not insert answer";
+    } else {
+        $answers_list[] = array(
+            "answer" => $answer,
+            "answered_by" => $answered_by,
+            "created_at" => $created_at,
+            "q_id" => $q_id
+        );
+
+        return $answers_list;
+    }
+}
