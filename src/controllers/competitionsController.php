@@ -1,5 +1,32 @@
 <?php include_once __dir__ . "/../../config.php";
 
+function populate_array(&$list, $obj, $id)
+{
+    if ($id === true) {
+        array_push($list, array(
+            "id" => $obj['id'],
+            "name" => $obj['name'],
+            "description" => $obj['description'],
+            "start_date" => $obj['start_date'],
+            "end_date" => $obj['end_date'],
+            "image" => $obj['image'],
+            "prize" => $obj['prize'],
+            "host" => $obj['host'],
+            "link" => $obj['link'],
+        ));
+    } else {
+        array_push($list, array(
+            "name" => $obj['name'],
+            "description" => $obj['description'],
+            "start_date" => $obj['start_date'],
+            "end_date" => $obj['end_date'],
+            "image" => $obj['image'],
+            "prize" => $obj['prize'],
+            "host" => $obj['host'],
+            "link" => $obj['link'],
+        ));
+    }
+}
 function get_competitions_list()
 {
     global $db_handle;
@@ -7,121 +34,95 @@ function get_competitions_list()
     $result = mysqli_query($db_handle, $SQL);
     $competitions_list = array();
     while ($db_field = mysqli_fetch_assoc($result)) {
-        $competitions_list[] = array(
-            "id" => $db_field['id'],
-            "name" => $db_field['name'],
-            "description" => $db_field['description'],
-            "start_date" => $db_field['start_date'],
-            "end_date" => $db_field['end_date'],
-            "image" => $db_field['image'],
-            "prize" => $db_field['prize'],
-            "host" => $db_field['host'],
-            "link" => $db_field['link'],
-        );
+        populate_array($competitions_list, $db_field, true);
     }
-
     return $competitions_list;
 }
 
-function post_competition($competition)
+function post_competition()
 {
+    $file = file_get_contents("php://input", true);
+    $data = (array) json_decode($file);
+    if (isset($data['name']) && isset($data['description']) && isset($data['prize']) && isset($data['start_date']) && isset($data['end_date']) && isset($data['link']) && isset($data['host']) && isset($data['link'])) {
+        $name = $data['name'];
+        $description = $data['description'];
+        $prize = $data['prize'];
+        $start_date = $data['start_date'];
+        $end_date = $data['end_date'];
+        $image = $data['image'];
+        $host = $data['host'];
+        $link = $data['link'];
+    } else {
+        return "could not post competition, all values not set";
+    }
     global $db_handle;
-    $name =  $competition->name;
-    $description = $competition->description;
-    $start_date = $competition->start_date;
-    $end_date = $competition->end_date;
-    $prize = $competition->prize;
-    $image =  $competition->image;
-    $host =  $competition->host;
-    $link = $competition->link;
     $SQL = "INSERT INTO COMPETITIONS (name, description, start_date,end_date, prize,image,host,link) VALUES ('$name','$description','$start_date','$end_date',$prize,'$image','$host','$link')";
     $result = mysqli_query($db_handle, $SQL);
     $competitions_list = array();
     if ($result == false) {
-        echo "could not insert competition";
+        return "could not insert competition";
     } else {
-        $competitions_list[] = array(
-            "name" => $name,
-            "description" => $description,
-            "start_date" => $start_date,
-            "end_date" => $end_date,
-            "prize" => $prize,
-            "image" => $image,
-            "host" => $host,
-            "link" => $link
-
-        );
+        populate_array($competitions_list, $data, false);
 
         return $competitions_list;
     }
 }
 
 
-
-function update_competition($competition)
+function update_competition()
 {
+    $file = file_get_contents("php://input", true);
+    $data = (array) json_decode($file);
+    if (isset($data['id']) && isset($data['name']) && isset($data['description']) && isset($data['prize']) && isset($data['start_date']) && isset($data['end_date']) && isset($data['link']) && isset($data['host']) && isset($data['link'])) {
+        $id = $data['id'];
+        $name = $data['name'];
+        $description = $data['description'];
+        $prize = $data['prize'];
+        $start_date = $data['start_date'];
+        $end_date = $data['end_date'];
+        $image = $data['image'];
+        $host = $data['host'];
+        $link = $data['link'];
+    } else {
+        return "could not update competition, all values not set";
+    }
     global $db_handle;
-    $id = $competition->id;
-    $name =  $competition->name;
-    $description = $competition->description;
-    $start_date = $competition->start_date;
-    $end_date = $competition->end_date;
-    $prize = $competition->prize;
-    $image =  $competition->image;
-    $host =  $competition->host;
-    $link = $competition->link;
     $SQL = "UPDATE COMPETITIONS SET name = '$name', description= '$description',start_date='$start_date',end_date='$end_date',prize=$prize,image='$image',host='$host',link='$link' WHERE id = $id";
     $result = mysqli_query($db_handle, $SQL);
     $competitions_list = array();
     if ($result == false) {
-        echo "could not insert competition";
+        return "could not update competition, sql query not valid";
     } else {
-        $competitions_list[] = array(
-            "name" => $name,
-            "description" => $description,
-            "start_date" => $start_date,
-            "end_date" => $end_date,
-            "prize" => $prize,
-            "image" => $image,
-            "host" => $host,
-            "link" => $link
-
-        );
-
+        populate_array($competitions_list, $data, false);
         return $competitions_list;
     }
 }
 
 
-function delete_competition($id)
+function delete_competition()
 {
+    $file = file_get_contents("php://input", true);
+    $data = (array) json_decode($file);
+    if (!isset($data['id'])) {
+        return "could not delete competition, id not given";
+    }
+    $id = $data['id'];
     global $db_handle;
     $SQL_ = "SELECT * FROM COMPETITIONS WHERE id = $id";
     $result = mysqli_query($db_handle, $SQL_);
     if (!$result) {
-        echo "could not find competition";
+        return "could not find competition with id";
         exit();
     }
     $SQL = "DELETE FROM COMPETITIONS WHERE id = $id";
     $delete_result = mysqli_query($db_handle, $SQL);
     $competitions_list = array();
     if ($delete_result == false) {
-        echo "could not delete competition!!!";
+        return "could not delete competition!";
     } else {
         while ($db_field = mysqli_fetch_assoc($result)) {
-        $competitions_list[] = array(
-            "id" => $db_field['id'],
-            "name" => $db_field['name'],
-            "description" => $db_field['description'],
-            "start_date" => $db_field['start_date'],
-            "end_date" => $db_field['end_date'],
-            "prize" => $db_field['prize'],
-            "image" => $db_field['image'],
-            "host" => $db_field['host'],
-            "link" => $db_field['link']
-
-        );
-    }
+            populate_array($competitions_list, $db_field, true);
+        }
         return $competitions_list;
     }
 }
