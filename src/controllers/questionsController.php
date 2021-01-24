@@ -17,3 +17,26 @@ function get_questions_list()
 
     return $questions_list;
 }
+
+function post_question($question_)
+{
+    global $db_handle;
+    $question =  $question_->question;
+    $asked_by = $question_->asked_by;
+    $created_at = $question_->created_at;
+    $SQL = "INSERT INTO QUESTIONS (question, asked_by, created_at) VALUES ('$question','$asked_by','$created_at')";
+
+    $result = mysqli_query($db_handle, $SQL);
+    $questions_list = array();
+    if ($result == false) {
+        echo "could not insert question";
+    } else {
+        $questions_list[] = array(
+            "question" => $question,
+            "asked_by" => $asked_by,
+            "created_at" => $created_at,
+        );
+
+        return $questions_list;
+    }
+}

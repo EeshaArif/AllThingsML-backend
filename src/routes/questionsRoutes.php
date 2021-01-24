@@ -16,7 +16,20 @@
             break;
 		}
 	}
+	else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		$file = file_get_contents("php://input", true);
+		$data = (array) json_decode($file);
+		$question_ = new \stdClass();
+		if (isset($data['question']) && isset($data['asked_by']) && isset($data['created_at'])) {
+			$question_->question = $data['question'];
+			$question_->asked_by = $data['asked_by'];
+			$question_->created_at = $data['created_at'];
+			$value = post_question($question_);
+		} else {
+			$value = "could not post question, all values not set";
+		}
+		exit(json_encode(array("questions_list" => $value)));
+	}
 	
 	//return JSON array
 	exit(json_encode($value));
- ?>
