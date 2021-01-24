@@ -1,22 +1,23 @@
 <?php include __dir__."/../controllers/coursesController.php"; 
-    //List of all the possible method calls from the URL
-	$possible_actions = array( "get_courses_list");
-	
-	//By default the resulting value will be an error, until it change by the correct one
-	$value = "An error has occurred (is this action included in the possible actions?)";
-	
-	//Check if the call is correct and if the parameter of the call is included in the possible URL's
-	if (isset($_GET["action"]) && in_array($_GET["action"], $possible_actions))
-	{
-		switch ($_GET["action"])
-		{
-        case "get_courses_list":
-            $value = get_courses_list();
-            exit(json_encode(array("courses_list" => $value)));
-            break;
-		}
-	}
-	
-	//return JSON array
-	exit(json_encode($value));
- ?>
+
+$value = "An error has occurred while processing request";
+
+$method = $_SERVER['REQUEST_METHOD'];
+switch ($method) {
+	case "GET":
+		$value = get_courses_list();
+		break;
+
+	case "POST":
+		$value = post_course();
+		break;
+
+	case "PUT":
+		$value = update_course();
+		break;
+
+	case "DELETE":
+		$value = delete_course();
+		break;
+}
+exit(json_encode(array("courses_list" => $value)));

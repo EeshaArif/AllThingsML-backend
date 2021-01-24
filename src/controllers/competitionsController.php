@@ -43,7 +43,7 @@ function post_competition()
 {
     $file = file_get_contents("php://input", true);
     $data = (array) json_decode($file);
-    if (isset($data['name']) && isset($data['description']) && isset($data['prize']) && isset($data['start_date']) && isset($data['end_date']) && isset($data['link']) && isset($data['host']) && isset($data['link'])) {
+    if (isset($data['name']) && isset($data['description']) && isset($data['prize']) && isset($data['start_date']) && isset($data['end_date']) && isset($data['link']) && isset($data['host']) && isset($data['image'])) {
         $name = $data['name'];
         $description = $data['description'];
         $prize = $data['prize'];
@@ -73,7 +73,7 @@ function update_competition()
 {
     $file = file_get_contents("php://input", true);
     $data = (array) json_decode($file);
-    if (isset($data['id']) && isset($data['name']) && isset($data['description']) && isset($data['prize']) && isset($data['start_date']) && isset($data['end_date']) && isset($data['link']) && isset($data['host']) && isset($data['link'])) {
+    if (isset($data['id']) && isset($data['name']) && isset($data['description']) && isset($data['prize']) && isset($data['start_date']) && isset($data['end_date']) && isset($data['link']) && isset($data['host']) && isset($data['image'])) {
         $id = $data['id'];
         $name = $data['name'];
         $description = $data['description'];

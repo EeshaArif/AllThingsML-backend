@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS COURSES (
 	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	course_name TEXT,
 	course_description TEXT,
-	image VARCHAR(50),
+	image LONGBLOB,
 	rating INT,
 	instructor VARCHAR(50),
 	link VARCHAR(1000)
