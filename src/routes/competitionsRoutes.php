@@ -1,9 +1,7 @@
 <?php include __dir__ . "/../controllers/competitionsController.php";
 
-//By default the resulting value will be an error, until it change by the correct one
-$value = "An error has occurred (is this action included in the possible actions?)";
+$value = "An error has occurred processing request";
 
-//Check if the call is correct and if the parameter of the call is included in the possible URL's
 $method = $_SERVER['REQUEST_METHOD'];
 switch ($method) {
 	case "GET":
