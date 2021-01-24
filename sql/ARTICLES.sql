@@ -13,7 +13,7 @@ insert into ARTICLES (id, heading, description, thumbnail, body, author, created
 
  'PCA, is a dimensionality-reduction method that is often used to reduce the dimensionality of large data sets.',
 
-  'assets/img/articles/pca.png',
+  'assets/img/pca.png',
 
    'Whoever tried to build <b>machine learning models </b> with many features would already know the glims about the concept of principal component analysis, In short <b>PCA</b>. <br><br> 
 
@@ -33,7 +33,7 @@ When the model is under training. Some part of the data is used for the model tr
 
 This evaluation step helps us gain an understanding of whether the model is generalized or not. 
 
-You can consider any of the below articles for splitting the dataset into train and test.<br>
+You can consider any of the below for splitting the dataset into train and test.<br>
 
 Building a decision tree by splitting the data into train and test datasets. <br>
 
@@ -61,7 +61,7 @@ insert into ARTICLES (id, heading, description, thumbnail, body, author, created
 
  'Feature selection, also known as variable selection, is the process of selecting a subset of relevant features (variables, predictors) for use in model construction.',
 
-  'assets/img/articles/Safi.jpeg',
+  'assets/img/feature.png',
 
    'Feature selection is the key influence factor for building accurate <b>machine learning models</b>. 
 
@@ -127,7 +127,7 @@ insert into ARTICLES (id, heading, description, thumbnail, body, author, created
 
  'Cross-validation is a statistical method used to estimate the skill of machine learning models.',
 
-  '../src/assets/img/articles/pca.png',
+  'assets/img/crossval.png',
 
    'It is mostly used while building machine learning models. It compares and selects a model for a given predictive modeling problem, assesses the models’ predictive performance. 
 
@@ -208,7 +208,7 @@ insert into ARTICLES (id, heading, description, thumbnail, body, author, created
 
  'Today we are going to learn about the popular unsupervised learning algorithms in machine learning.',
 
-  '../src/assets/img/articles/pca.png',
+  'assets/img/unsupervised.png',
 
    '<b>Let’s start the article by discussing unsupervised learning. </b><br><br>
 
@@ -286,7 +286,7 @@ insert into ARTICLES (id, heading, description, thumbnail, body, author, created
 
  'Ridge regression is the regularized form of linear regression.',
 
-  '../src/assets/img/articles/pca.png',
+  'assets/img/ridge.png',
 
    'Before we learn about ridge regression, we should know about how linear regression works. Don’t forget, These pools of regression algorithms fall under the supervised learning algorithms category.
 
@@ -384,7 +384,7 @@ insert into ARTICLES (id, heading, description, thumbnail, body, author, created
 
  'Nearly 80% of the people build linear regression models without checking the basic assumptions of linear regression.',
 
-  '../src/assets/img/articles/pca.png',
+  'assets/img/linearreg.png',
 
    'Just hold for a second and think. How many times have you built linear regression models without checking the linear regression assumptions?
 
