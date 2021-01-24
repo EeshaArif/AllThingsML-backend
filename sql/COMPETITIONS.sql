@@ -5,8 +5,8 @@ CREATE TABLE IF NOT EXISTS COMPETITIONS (
 	description TEXT,
 	start_date DATETIME,
 	end_date DATETIME,
-	image VARCHAR(50),
-	prize VARCHAR(50),
+	image LONGBLOB,
+	prize FLOAT,
 	host VARCHAR(500),
     link VARCHAR(1000)
 );
