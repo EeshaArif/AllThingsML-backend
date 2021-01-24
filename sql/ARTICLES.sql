@@ -13,7 +13,7 @@ insert into ARTICLES (id, heading, description, thumbnail, body, author, created
 
  'PCA, is a dimensionality-reduction method that is often used to reduce the dimensionality of large data sets.',
 
-  '../src/assets/img/articles/pca.png',
+  'assets/img/articles/pca.png',
 
    'Whoever tried to build <b>machine learning models </b> with many features would already know the glims about the concept of principal component analysis, In short <b>PCA</b>. <br><br> 
 
@@ -61,7 +61,7 @@ insert into ARTICLES (id, heading, description, thumbnail, body, author, created
 
  'Feature selection, also known as variable selection, is the process of selecting a subset of relevant features (variables, predictors) for use in model construction.',
 
-  '../src/assets/img/articles/pca.png',
+  'assets/img/articles/Safi.jpeg',
 
    'Feature selection is the key influence factor for building accurate <b>machine learning models</b>. 
 
