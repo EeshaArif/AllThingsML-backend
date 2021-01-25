@@ -8,9 +8,22 @@ CREATE TABLE IF NOT EXISTS COURSES (
 	instructor VARCHAR(50),
 	link VARCHAR(1000)
 );
-insert into COURSES (id, course_name, course_description, image, rating, instructor, link) values (1, 'sapien non', 'Maecenas pulvinar lobortis est. Phasellus sit amet erat.', 'http://dummyimage.com/100x100.png/5fa2dd/ffffff', 2, 'Denney Stobbes', 'http://nydailynews.com/curabitur/at/ipsum/ac.xml');
-insert into COURSES (id, course_name, course_description, image, rating, instructor, link) values (2, 'at turpis', 'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.', 'http://dummyimage.com/100x100.png/ff4444/ffffff', 1, 'Ronnie Ranaghan', 'http://earthlink.net/venenatis/lacinia/aenean.jpg');
-insert into COURSES (id, course_name, course_description, image, rating, instructor, link) values (3, 'turpis donec', 'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 'http://dummyimage.com/100x100.png/ff4444/ffffff', 1, 'Si Lansley', 'https://1und1.de/pellentesque.jsp');
-insert into COURSES (id, course_name, course_description, image, rating, instructor, link) values (4, 'habitasse platea', 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.', 'http://dummyimage.com/100x100.png/5fa2dd/ffffff', 2, 'Lisette Lumsdale', 'http://oakley.com/turpis.js');
-insert into COURSES (id, course_name, course_description, image, rating, instructor, link) values (5, 'quis orci nullam molestie', 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', 'http://dummyimage.com/100x100.png/cc0000/ffffff', 5, 'Carol Barnson', 'http://google.com.au/urna/ut/tellus/nulla.aspx');
-insert into COURSES (id, course_name, course_description, image, rating, instructor, link) values (6, 'lobortis convallis tortor', 'Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.', 'http://dummyimage.com/100x100.png/ff4444/ffffff', 3, 'Matthaeus Matevushev', 'http://mtv.com/lectus/in.png');
+insert into COURSES (id, course_name, course_description, image, rating, instructor, link) values (1, 'Data Science Ready', 
+	'Data Science Ready is a Harvard Online course in collaboration with Harvard Business School Online that allows you to gain a familiarity with the essential concepts and use of data science, including prediction, causality, data wrangling, privacy, and ethics.', 
+	 'https://www.kaggle.com/search', 3.7, 
+	'Dustin Tingley', 
+	'https://online.hbs.edu/courses/data-science-ready/');
+
+
+insert into COURSES (id, course_name, course_description, image, rating, instructor, link) values (2, 'Natural Language Processing For Beginners',
+ 'We will discuss a higher level overview of the basics of Natural Language Processing, which basically consists of combining machine learning techniques with text, and using math and statistics to get that text in a format that the machine learning algorithms can understand!',
+ 'https://www.kaggle.com/search', 4.2,
+ 'Fares Sayah', 
+ 'https://www.kaggle.com/faressayah/natural-language-processing-nlp-for-beginners');
+
+
+insert into COURSES (id, course_name, course_description, image, rating, instructor, link) values (3, 'Intro to Machine Learning', 
+	'Learn the core ideas in machine learning, and build your first models.',
+	 'https://www.kaggle.com/search' , 4.3, 
+	'Dan Becker', 
+	'https://www.kaggle.com/learn/intro-to-machine-learning');
