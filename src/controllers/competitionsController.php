@@ -1,5 +1,6 @@
 <?php include_once __dir__ . "/../../config.php";
 
+
 function populate_array(&$list, $obj, $id)
 {
     if ($id === true) {
@@ -112,7 +113,6 @@ function delete_competition()
     $result = mysqli_query($db_handle, $SQL_);
     if (!$result) {
         return "could not find competition with id";
-        exit();
     }
     $SQL = "DELETE FROM COMPETITIONS WHERE id = $id";
     $delete_result = mysqli_query($db_handle, $SQL);
