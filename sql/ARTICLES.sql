@@ -53,7 +53,31 @@ It is mandatory that the unseen input data should come from the same distributio
 
 The accuracy of the generalized model’s prediction on the unseen data should be very close to its accuracy on the training data.
 
-The efficient way to build a generalized model is by capturing a variety of possible combinations of the values of predictor variables and their corresponding targets. <br><br>', 'Anber Arif', '2020-10-06 10:51:13');
+The efficient way to build a generalized model is by capturing a variety of possible combinations of the values of predictor variables and their corresponding targets. <br><br>
+
+<p>
+            The lower-dimensional principal components capture the majority of the information in the high dimensional dataset.
+
+The transformation of an ‘n’ dimensional data is done into ‘n’ principal components. Then the selection of these ‘n’ principal components subset is based on the percentage of variance in the data intended to be captured through the principal components.
+
+We can also define Principal Component Analysis (PCA) as an exploratory approach to reduce the dataset’s dimensionality into 2D or 3D.
+
+Used in exploratory data analysis for making predictive models.<br><br>
+<b> Purpose of Principal Component Analysis
+          </p>
+          <ul>
+            <li>
+              <i class="ion-android-checkmark-circle"></i> To visualize the high dimensionality data.
+            </li>
+            <li>
+              <i class="ion-android-checkmark-circle"></i> To introduce improvements in classification.
+            </li>
+            <li>
+              <i class="ion-android-checkmark-circle"></i> To search for patterns in the dataset of high dimensionality.
+            </li>
+          </ul>',
+
+ 'Anber Arif', '2020-10-06 10:51:13');
 
 
 
@@ -111,7 +135,21 @@ RFE performs the evaluation of multiple models using procedures that add or remo
 
 The accuracy of the generalized model’s prediction on the unseen data should be very close to its accuracy on the training data.
 
-The efficient way to build a generalized model is by capturing a variety of possible combinations of the values of predictor variables and their corresponding targets. <br><br>',
+The efficient way to build a generalized model is by capturing a variety of possible combinations of the values of predictor variables and their corresponding targets. <br><br>
+
+<b> So far, we got an idea of the following</b>:
+          </p>
+          <ul>
+            <li>
+              <i class="ion-android-checkmark-circle"></i> The types of feature selection techniques are supervised and unsupervised. The supervised methods are further classified into the <b>filter, wrapper, and intrinsic methods</b>.
+            </li>
+            <li>
+              <i class="ion-android-checkmark-circle"></i> Statistical measures are used by filter-based feature selection to score the correlation or dependence between input variables and the output or response variable.
+            </li>
+            <li>
+              <i class="ion-android-checkmark-circle"></i> Statistical measures for feature selection must be carefully chosen on the basis of the data type of the input variable and the output variable.
+            </li>
+          </ul>',
  'Anber Arif', '2020-10-06 10:51:13');
 
 
